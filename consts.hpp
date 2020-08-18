@@ -4,8 +4,8 @@
 
 using namespace std;
 
-const int NAtom = 1000; //粒子数
-const double NRho = 0.8; //数密度
+const int NAtom = 10000; //粒子数
+const double NRho = 0.7; //数密度
 const double LBox = sqrt(NAtom/NRho); //ボックスの一辺の長さ
 const double LHalf = LBox/2.0; //その半分
 

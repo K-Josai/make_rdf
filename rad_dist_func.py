@@ -34,7 +34,7 @@ def make_g_of_r():
             rij = np.sqrt(xij**2 + yij**2)
             r_list.append(rij)
 
-    k = (1+np.log2(len(r_list)))*20.0  # Sturges' formula
+    k = (1+np.log2(len(r_list)))*400.0  # Sturges' formula
     width = (max(r_list)-min(r_list))/k
     r_floored_list = np.floor(np.array(r_list)/width)
     freq_r = np.array((pd.Series(r_floored_list).value_counts()).sort_index())
@@ -43,7 +43,7 @@ def make_g_of_r():
     for i in range(len(freq_r)):
         g_of_r[i] = freq_r[i]/(np.pi*yokojiku[i]*width*NRHO*NATOM)
 
-    with open("./g_of_r.txt", "w") as f4:
+    with open("./g_of_r2.txt", "w") as f4:
         for i in range(len(freq_r)):
             print("{} {}".format(yokojiku[i], g_of_r[i]), file=f4)
 
